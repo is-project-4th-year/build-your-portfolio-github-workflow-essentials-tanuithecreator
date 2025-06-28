@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navigation -->
@@ -26,17 +26,29 @@
   <!-- Hero / Landing -->
   <section id="home">
     <h1>Hello, I'm Julian Tanui</h1>
-    <p>Front-end Developer | Designer | Tech Enthusiast </p>
+    <p>Front-end Developer | Designer | Tech Enthusiast</p>
     <a href="#projects" class="btn">View My Work</a>
   </section>
 
   <!-- About Me -->
   <section id="about">
-    <img src="your-photo.jpg" alt="Your Name" />
-    <div>
-      <h2>About Me</h2>
-      <p>Brief bio: Who you are, what you do, and what drives you.</p>
-      <p><strong>Skills:</strong> HTML, CSS, JavaScript, React, Node.js</p>
+    <div class="about-content">
+      <img src="porsche.jpg" alt="Julian Tanui" class="about-photo" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate Front-end Developer with a love for clean design and smooth user experiences.
+          I enjoy turning ideas into interactive, accessible web interfaces.
+        </p>
+        <h3>Skills</h3>
+        <div class="skills-bars">
+          <div class="skill"><span>HTML</span><div class="bar"><div class="fill html"></div></div></div>
+          <div class="skill"><span>CSS</span><div class="bar"><div class="fill css"></div></div></div>
+          <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill js"></div></div></div>
+          <div class="skill"><span>React</span><div class="bar"><div class="fill react"></div></div></div>
+          <div class="skill"><span>Node.js</span><div class="bar"><div class="fill node"></div></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -51,7 +63,6 @@
         <a href="#" class="btn">View Repo</a>
       </div>
     </div>
-    <!-- Repeat .project-card for other projects -->
   </section>
 
   <!-- Contact -->
@@ -65,7 +76,7 @@
     </form>
   </section>
 
-  <!-- Embedded JS -->
+  <!-- JavaScript -->
   <script>
     // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
@@ -74,13 +85,25 @@
       navMenu.classList.toggle('active');
     });
 
-    // Smooth scroll for nav links
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    // Scroll-triggered skill bar animation
+    const aboutSection = document.getElementById('about');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add('animate');
+          observer.unobserve(aboutSection);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(aboutSection);
   </script>
 </body>
 </html>
