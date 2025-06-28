@@ -1,19 +1,21 @@
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #121212;
   color: #f0f0f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 img {
   max-width: 100%;
   display: block;
@@ -130,8 +132,8 @@ section {
 }
 .skill span {
   font-weight: 600;
-  display: inline-block;
   margin-bottom: 0.25rem;
+  display: inline-block;
 }
 .bar {
   width: 100%;
@@ -155,30 +157,77 @@ section {
 .animate .fill.node { width: 70%; }
 
 /* Projects */
-#projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+#projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #00bfff;
+}
+.projects-wrapper {
+  position: relative;
+}
+.projects-container {
+  display: flex;
   gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 2rem;
 }
 .project-card {
-  border: 1px solid #333;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
+  flex: 0 0 300px;
   background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
+  transition: transform 0.3s;
 }
 .project-card:hover {
   transform: translateY(-5px);
 }
 .project-card img {
-  height: 150px;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
 }
 .project-card-content {
   padding: 1rem;
 }
 .project-card h3 {
   margin-bottom: 0.5rem;
+  color: #00bfff;
+}
+.project-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
+}
+.scroll-btn:hover {
+  background: #0099cc;
+}
+.scroll-btn.left {
+  left: 0.5rem;
+}
+.scroll-btn.right {
+  right: 0.5rem;
+}
+.projects-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Contact */
@@ -221,10 +270,11 @@ section {
   .hamburger {
     display: flex;
   }
-  #about {
-    text-align: center;
-  }
   .about-content {
     flex-direction: column;
+    text-align: center;
+  }
+  .scroll-btn {
+    display: none;
   }
 }

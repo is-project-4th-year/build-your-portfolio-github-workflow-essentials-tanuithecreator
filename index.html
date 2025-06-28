@@ -15,7 +15,6 @@
         <div></div><div></div><div></div>
       </div>
       <div class="nav-menu" id="nav-menu">
-        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -23,7 +22,7 @@
     </div>
   </nav>
 
-  <!-- Hero / Landing -->
+  <!-- Hero -->
   <section id="home">
     <h1>Hello, I'm Julian Tanui</h1>
     <p>Front-end Developer | Designer | Tech Enthusiast</p>
@@ -36,14 +35,11 @@
       <img src="porsche.jpg" alt="Julian Tanui" class="about-photo" />
       <div class="about-text">
         <h2>About Me</h2>
-        <p>
-          I'm a passionate Front-end Developer with a love for clean design and smooth user experiences.
-          I enjoy turning ideas into interactive, accessible web interfaces.
-        </p>
+        <p>I'm a passionate Front-end Developer who enjoys building visually appealing and user-friendly web experiences.</p>
         <h3>Skills</h3>
         <div class="skills-bars">
-          <div class="skill"><span>HTML</span><div class="bar"><div class="fill html"></div></div></div>
-          <div class="skill"><span>CSS</span><div class="bar"><div class="fill css"></div></div></div>
+          <div class="skill"><span>HTML & CSS</span><div class="bar"><div class="fill html"></div></div></div>
+          <div class="skill"><span>Python</span><div class="bar"><div class="fill css"></div></div></div>
           <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill js"></div></div></div>
           <div class="skill"><span>React</span><div class="bar"><div class="fill react"></div></div></div>
           <div class="skill"><span>Node.js</span><div class="bar"><div class="fill node"></div></div></div>
@@ -55,13 +51,38 @@
   <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-card">
-      <img src="project1.jpg" alt="Project 1" />
-      <div class="project-card-content">
-        <h3>Project One</h3>
-        <p>Short description of project one.</p>
-        <a href="#" class="btn">View Repo</a>
+    <div class="projects-wrapper">
+      <button class="scroll-btn left" id="scroll-left">&#10094;</button>
+      <div class="projects-container" id="projects-container">
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/CasaControl" target="_blank">
+            <img src="Casacontrol.jpeg" alt="Project 1" />
+          </a>
+          <div class="project-card-content">
+            <h3>CasaControl</h3>
+            <p>A Mobile Application for Smart Home Management</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/IS1" target="_blank">
+            <img src="Foodshare.jpeg" alt="Project 2" />
+          </a>
+          <div class="project-card-content">
+            <h3>FoodShare</h3>
+            <p>A Web application for transparent donations,donation matching and live tracking</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/AI-speech-to-text-converter" target="_blank">
+            <img src="SpeechToText.jpeg" alt="Project 3" />
+          </a>
+          <div class="project-card-content">
+            <h3>AI-speech-to-text-converter</h3>
+            <p>Leveraging Artifical intelligence to take in voice output and respond in text</p>
+          </div>
+        </div>
       </div>
+      <button class="scroll-btn right" id="scroll-right">&#10095;</button>
     </div>
   </section>
 
@@ -78,14 +99,12 @@
 
   <!-- JavaScript -->
   <script>
-    // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -93,7 +112,7 @@
       });
     });
 
-    // Scroll-triggered skill bar animation
+    // Skill bar animation
     const aboutSection = document.getElementById('about');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -104,6 +123,15 @@
       });
     }, { threshold: 0.5 });
     observer.observe(aboutSection);
+
+    // Project scroll buttons
+    const scrollContainer = document.getElementById('projects-container');
+    document.getElementById('scroll-left').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    document.getElementById('scroll-right').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
