@@ -2,10 +2,10 @@
 
 ## 1. Student Details
 
-- **Full Name**:
-- **Admission Number**:
-- **GitHub Username**:
-- **Email**:
+- **Full Name**: Julian Tanui
+- **Admission Number**: 150777
+- **GitHub Username**: @tanuithecreator
+- **Email**: julian.tanui@strathmore.edu
 
 ## 2. Deployed Portfolio Link
 
