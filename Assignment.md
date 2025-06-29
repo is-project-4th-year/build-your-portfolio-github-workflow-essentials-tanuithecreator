@@ -91,4 +91,7 @@
 - This pull request is linked to issue #5 under the Create a project section milestone, it is already merged with main
 ### E. Merge Conflict Resolution
 
-- Screenshot of a resolved merge conflict (in a pull request, commit history, or your local terminal/GitHub Desktop).
+![alt text](conflict.png)
+ ![alt text](solconflict.png)
+
+- Resolved merge conflict in a pull request
