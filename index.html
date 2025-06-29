@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <!-- Navigation -->
@@ -69,7 +70,7 @@
           </a>
           <div class="project-card-content">
             <h3>FoodShare</h3>
-            <p>A Web application for transparent donations,donation matching and live tracking</p>
+            <p>A Web application for transparent donations, donation matching and live tracking</p>
           </div>
         </div>
         <div class="project-card">
@@ -78,7 +79,7 @@
           </a>
           <div class="project-card-content">
             <h3>AI-speech-to-text-converter</h3>
-            <p>Leveraging Artifical intelligence to take in voice output and respond in text</p>
+            <p>Leveraging Artificial Intelligence to take in voice output and respond in text</p>
           </div>
         </div>
       </div>
@@ -86,19 +87,48 @@
     </div>
   </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="contact-container">
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <h3>Find Me On</h3>
+        <a href="https://github.com/tanuithecreator" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="www.linkedin.com/in/tanui-julian-8b2341323" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:your.email@example.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-
-
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Julian Tanui. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/tanuithecreator" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="www.linkedin.com/in/tanui-julian-8b2341323" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/instanuii/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <!-- JavaScript -->
   <script>
@@ -115,7 +145,6 @@
       });
     });
 
-    // Skill bar animation
     const aboutSection = document.getElementById('about');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -127,7 +156,6 @@
     }, { threshold: 0.5 });
     observer.observe(aboutSection);
 
-    // Project scroll buttons
     const scrollContainer = document.getElementById('projects-container');
     document.getElementById('scroll-left').addEventListener('click', () => {
       scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
