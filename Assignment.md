@@ -2,10 +2,10 @@
 
 ## 1. Student Details
 
-- **Full Name**: Julian Tanui
-- **Admission Number**: 150777
-- **GitHub Username**: @tanuithecreator
-- **Email**: julian.tanui@strathmore.edu
+- **Julian Tanui**
+- ** 150777**:
+- **@tanuithecreator**: 
+- **julian.tanui@strathmore.edu**: 
 
 ## 2. Deployed Portfolio Link
 
@@ -69,31 +69,26 @@
 ---
 ## 4. Screenshots of Key GitHub Features
 
-Include screenshots that demonstrate how you used GitHub to manage your project. For each screenshot, write a short caption explaining what it shows.
-
-> Upload the screenshots to your GitHub repository and reference them here using Markdown image syntax:
-> (you could just simply copy and paste the image into the Assignment.md)
-
-```markdown
-![Caption](path/to/your/image.png)
-```
-
 ### A. Milestones and Issues
+![alt text](milestones.png)
+![alt text](issues.png)
 
-- Screenshot showing your milestone(s) and the issues linked to it.
+- The milestones were grouped into sections that the portfolio would contain and the issues assigned to specific milestones depending on  the best fit.
 
 ### B. Project Board
 
-- Screenshot of your GitHub Project Board with issues organized into columns (e.g., To Do, In Progress, Done).
+![alt text](projectboard.png)
+
+- This project board helped me keep track of the issues as i solved them sequentially
 
 ### C. Branching
 
-- Screenshot showing your branch list with meaningful naming.
-
+![alt text](branches.png)
+- The branches were named in relation to what was going to be the main development focus in that issue
 ### D. Pull Requests
 
-- Screenshot of a pull request that’s either open or merged and linked to a related issue.
-
+![alt text](pullrequest.png)
+- This pull request is linked to issue #5 under the Create a project section milestone, it is already merged with main
 ### E. Merge Conflict Resolution
 
 - Screenshot of a resolved merge conflict (in a pull request, commit history, or your local terminal/GitHub Desktop).
