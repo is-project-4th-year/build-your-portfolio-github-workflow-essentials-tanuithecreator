@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand">Tanui Inc</div>
+
+      <div class="hamburger" id="hamburger">
+        <div></div><div></div><div></div>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home">
+    <h1>Hello, I'm Julian Tanui</h1>
+    <p>Front-end Developer | Designer | Tech Enthusiast</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="about-content">
+      <img src="porsche.jpg" alt="Julian Tanui" class="about-photo" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm a passionate Front-end Developer who enjoys building visually appealing and user-friendly web experiences.</p>
+        <h3>Skills</h3>
+        <div class="skills-bars">
+          <div class="skill"><span>HTML & CSS</span><div class="bar"><div class="fill html"></div></div></div>
+          <div class="skill"><span>Python</span><div class="bar"><div class="fill css"></div></div></div>
+          <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill js"></div></div></div>
+          <div class="skill"><span>React</span><div class="bar"><div class="fill react"></div></div></div>
+          <div class="skill"><span>Node.js</span><div class="bar"><div class="fill node"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-wrapper">
+      <button class="scroll-btn left" id="scroll-left">&#10094;</button>
+      <div class="projects-container" id="projects-container">
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/CasaControl" target="_blank">
+            <img src="Casacontrol.jpeg" alt="Project 1" />
+          </a>
+          <div class="project-card-content">
+            <h3>CasaControl</h3>
+            <p>A Mobile Application for Smart Home Management</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/IS1" target="_blank">
+            <img src="Foodshare.jpeg" alt="Project 2" />
+          </a>
+          <div class="project-card-content">
+            <h3>FoodShare</h3>
+            <p>A Web application for transparent donations, donation matching and live tracking</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/tanuithecreator/AI-speech-to-text-converter" target="_blank">
+            <img src="SpeechToText.jpeg" alt="Project 3" />
+          </a>
+          <div class="project-card-content">
+            <h3>AI-speech-to-text-converter</h3>
+            <p>Leveraging Artificial Intelligence to take in voice output and respond in text</p>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-btn right" id="scroll-right">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <h3>Find Me On</h3>
+        <a href="https://github.com/tanuithecreator" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="www.linkedin.com/in/tanui-julian-8b2341323" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:your.email@example.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Julian Tanui. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/tanuithecreator" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="www.linkedin.com/in/tanui-julian-8b2341323" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/instanuii/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const aboutSection = document.getElementById('about');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add('animate');
+          observer.unobserve(aboutSection);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(aboutSection);
+
+    const scrollContainer = document.getElementById('projects-container');
+    document.getElementById('scroll-left').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    document.getElementById('scroll-right').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
