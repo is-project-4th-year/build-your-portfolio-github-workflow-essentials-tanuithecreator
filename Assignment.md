@@ -3,9 +3,9 @@
 ## 1. Student Details
 
 - **Julian Tanui**
-- **150777**:
-- **@tanuithecreator**: 
-- **julian.tanui@strathmore.edu**: 
+- **150777**
+- **@tanuithecreator**
+- **julian.tanui@strathmore.edu**
 
 ## 2. Deployed Portfolio Link
 
