@@ -42,7 +42,9 @@ nav {
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: 'Courier New', monospace;
 }
+
 .nav-menu {
   display: flex;
   gap: 1rem;
